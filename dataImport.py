@@ -6,16 +6,29 @@ Module to read in new gameLog data.
 @author: doug
 '''
 
+import numpy as np
 import pandas as pd
 import math
 import os
 import pickle
-from db_funcs import *
+from data_structure import *
 
 
-if os.path.exists("stats.db"):
-    activeDB = pickle.load("stats.db")
-else:
-    activeDB = 0
+def initialLoad(datafile):
+    if os.path.exists(datafile):
+        rawData = pd.read_csv(datafile)
+    else:
+        return NameError
     
-print("nothing")
+    players = {}
+    teams = {}
+    games = {}
+    
+    for entry in range(0,rawData.size):
+        thisEntry = rawData.iloc[entry]
+        playerName = thisEntry["PLAYER FULL NAME"]
+        if players.has_key(playerName):
+            exists = 1
+    return 1
+    
+initialLoad("gameLogs.csv")
