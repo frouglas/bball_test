@@ -16,15 +16,15 @@ class tenure():
     
 
 class player():
-    def __init__(self):
-        self.gamestats = []
-        self.gamesPlayed = 0
-        self.gamesEligible = 0
-        self.name = ""
-        self.activeTeam = 0
-        self.player_career = []
-        self.positions = ()
-        self.PlayerID = 0
+    def __init__(self, params):
+        self.gameStats = params.get('gameStats')
+        self.gamesPlayed = params.get('gamesPlayed')
+        self.gamesEligible = params.get('gamesEligible')
+        self.name = params.get('name')
+        self.activeTeam = params.get('activeTeam')
+        self.playerCareer = params.get('playerCareer')
+        self.positions = params.get('positions')
+        self.playerID = params.get('playerID')
         
 class team():
     def __init__(self):
