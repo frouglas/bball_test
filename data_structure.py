@@ -33,6 +33,11 @@ class team():
         self.historicalPlayers = []
 
 class game():
-    def __init__(self):
+    def __init__(self, params):
+        self.id = params.get('game_id')
         self.gamePlayers = []
-        
+        self.gameStats = {}
+
+class stats():
+    def __init__(self):
+        self.countingStats = []
